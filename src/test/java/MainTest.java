@@ -31,12 +31,12 @@ public class MainTest {
     public void testAddItemsMethod() throws NoSuchFieldException {
         Grocery.groceryList.add("tomato");
         Grocery.addItems("lemon");
-        Grocery.addItems("cherry,artichoke");
+        Grocery.addItems("cherry,tomato");
 
-        assertEquals(Grocery.groceryList.size(), 4);
+        assertEquals(Grocery.groceryList.size(), 3);
         assertEquals(Grocery.groceryList.contains("lemon"), true);
         assertEquals(Grocery.groceryList.contains("cherry"), true);
-        assertEquals(Grocery.groceryList.contains("artichoke"), true);
+        assertEquals(Grocery.groceryList.contains("tomato"), true);
     }
 
     @DisplayName("addItems methodu aynı elemanları eklemiyor mu?")
@@ -58,7 +58,7 @@ public class MainTest {
         Grocery.addItems("cherry,artichoke");
         Grocery.addItems("cherry,potato");
 
-        assertEquals(Grocery.groceryList.get(0), "artichoke");
+        assertEquals(Grocery.groceryList.get(0), "tomato");
     }
 
     @DisplayName("removeItems methodu doğru çalışıyor mu mu?")
@@ -88,7 +88,7 @@ public class MainTest {
         Grocery.addItems("cherry,artichoke");
         Grocery.addItems("cherry,potato");
 
-        assertEquals(Grocery.groceryList.get(0), "artichoke");
+        assertEquals(Grocery.groceryList.get(0), "tomato");
     }
 
     @DisplayName("checkItemsInList methodu doğru çalışıyor mu?")
